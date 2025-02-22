@@ -26,7 +26,7 @@ Route::get('/test-provider', function(UserService $UserService){
 Route::get('/test-users', [UserController::class, 'index']);
 
 Route::get('/test-facade', function (UserService $userService){
-    dd (Response::json($userService->ListUser()));
+    return $userService->ListUser();
 });
 
 
