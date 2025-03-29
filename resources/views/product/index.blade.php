@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<body>
-    <p>Products:</p>
-    <table>
-        <thead>
+<x-layout>
+    <x-slot:heading>
+        Product Lsit
+    </x-slot>
+    <x-table>
+    <thead>
             <tr>
-                @foreach(['id', 'name', 'category'] as $column)
-                    <td>{{ $column }}</td>
-                @endforeach
+                <th scope="col">"#"</th>
+                <th scope="col">"Product"</th>
+                <th scope="col">"Category"</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($products as $product)
             <tr>
-                <td>{{ $product['id'] }}</td>
+                <th scope="row">{{ $product['id'] }}</th>
                 <td>{{ $product['name'] }}</td>
                 <td>{{ $product['category'] }}</td>
             </tr>
             @endforeach
-        </body>
-    </table>
-
-    <p>Tasks:</p>
-    <ul>
-        @foreach ($tasks as $task)
-            <li>{{ $task }}</li>
-        @endforeach
-    </ul>
-
-    <p>Global Variable</p>
-    <p>{{$sharedVariable}}</p>
-
-    <p>Product Key: {{$productKey}}</p
-
-</body>
-</html>
+        </tbody>
+    </x-table>
+</x-layout>
+        
